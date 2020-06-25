@@ -2,8 +2,7 @@ body {
 	margin: 0px;
 	font-family: "Segoe UI", Arial, sans-serif;
 	color: white;
-	/*background-color: #0C0C0C;*/
-	background-image: url("back1.jpg");
+	background-color: #0C0C0C;
 }
 /* removing margin for all the textual elements */
 h1,
