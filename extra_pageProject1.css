@@ -1,0 +1,970 @@
+body {
+	margin: 0px;
+	font-family: "Segoe UI", Arial, sans-serif;
+	color: white;
+	/*background-color: #0C0C0C;*/
+	background-image: url("back1.jpg");
+	overflow-x: hidden;
+}
+/* removing margin for all the textual elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0px;
+}
+/* removing all the styles from the links and formatting them white */
+a {
+	text-decoration: none;
+	color: white;
+}
+.navigation-bar {
+	height: auto;
+	width: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	padding-left: 5%;
+	padding-right: 5%;
+	transition: all ease-in-out 1s; /* when the navbar loads, every property transits for 1s */
+}
+/* all the divs inside the navigation bar should be placed side by side*/
+.navigation-bar > div {
+	display: inline-block;
+}
+/* animation for the website logo */
+@keyframes rotating {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+/* website logo image */
+.website-logo img {
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	animation-name: rotating;
+	animation-timing-function: ease-in-out;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+/* website function */
+.website-name h4 {
+	color: white;
+}
+/* website title and general description */
+.title-combo > div {
+	vertical-align: middle;
+	display: inline-block;
+}
+/* animation for favoutites text */
+@keyframes flexible {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotateY(360deg);
+	}
+	75% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+/* favourites text */
+.favs {
+	animation-name: flexible;
+	animation-timing-function: ease-in-out;
+	animation-duration: 2s;
+	perspective: 10000px;
+	transform-style: preserves-3d;
+	animation-iteration-count: infinite;
+}
+/* search bar */
+.search-bar {
+	width: 20%;
+	position: relative;
+}
+/* changing the default style of the input bar */
+.search-bar input {
+	width: 100%;
+	font-size: 16px;
+	text-decoration: none;
+	border-radius: 18px;
+	border: none;
+	padding: 5px;
+	font-weight: 500;
+	text-align: center;
+	transition: all ease-in-out 0.1s;
+}
+/* search icon for input bar */
+.search-ico {
+	color: black;
+}
+/* mic icon for input */
+.mic-ico {
+	color:black;
+}
+/* search icon */
+.search-bar > div:nth-child(1) {
+	display: inline-block;
+	position: absolute;
+	width: min-content;
+	left: 5%;
+	top: 10%;
+	transition: all ease-in-out 0.1s;
+}
+/* mic icon */
+.search-bar > div:nth-child(3) {
+	display: inline-block;
+	position: absolute;
+	width: min-content;
+	right: 0%;
+	top: 10%;
+	transition: all ease-in-out 0.1s;
+}
+/* when the user clicks on the search bar, there should be no blue outlining */
+input:focus {
+	outline: none;
+}
+/* profile picture of the user */
+.profile-picture img {
+	width: 45px;
+	height: 45px;
+	border-radius: 100%;
+}
+/*this is the main song part*/
+.main-song{
+	position: relative;
+	left: 45px;
+	top: 60px;
+	width: 70%;
+	height:45vh;
+	display: flex;
+	justify-content: space-between;
+	background-image: linear-gradient(to right,#5200AE,#4062BB
+);
+	border-bottom-left-radius: 20px;
+	border-top-left-radius: 20px;
+}
+.main-image img{
+	width: 85%;
+	height: 100%;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;		
+}
+.main-data-head{
+	position: relative;
+	width: 80%;
+	height: 45vh;
+	display: flex;
+	justify-content: space-between;
+}
+.followers p{
+	margin-top: 50px;
+}
+.song-heading h2{
+	margin-top: 45px;
+}
+button{
+	width: 140px;
+	height: 40px;
+	color: white;
+	font-size: 15px;
+	font-weight: 600;
+    border: none;
+    display: inline;
+    cursor: pointer;
+	background-image: linear-gradient(to right,#0652C5,#D4418E);
+}
+button:hover{
+	opacity: 0.5;
+}
+/* this is the play button which will be visible only on hover */
+
+.song-details{
+	position: relative;
+	left: 45px;
+	top: 100px;
+	width:70%;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-rows:repeat(8,60px);
+}
+.song-details>div:hover{
+	cursor: pointer;
+	opacity: 0.5; 
+	transition: all ease-in-out 0.2s;
+}
+/* animation for glowing heart in each of the playlist items */
+@keyframes glowing-heart {
+	0% {
+		color: yellow;
+	}
+	50% {
+		color: orangered;
+	}
+	100% {
+		color: red;
+	}
+}
+/* hover effect on heart */
+.song-details>div:hover .data{
+	animation-name: glowing-heart;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-duration: 1s;
+}
+.song-details>div{
+	display: flex;
+	justify-content: space-between;
+	background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(194,180,217,1) 49%, rgba(148,187,233,1) 100%);
+);
+	border:none;
+	border-radius: 30px;
+}
+.time p{
+	margin-top: 15px;
+}
+/*image*/
+.div1 img{
+	height: 100%;
+	width: 60px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.div2 img{
+	height: 100%;
+	width: 60px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.div3 img{
+	height: 100%;
+	width: 60px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.div4 img{
+	height: 100%;
+	width: 60px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.div5 img{
+	height: 100%;
+	width: 60px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.div6 img{
+	height: 100%;
+	width: 60px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.div7 img{
+	height: 100%;
+	width: 60px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.div8 img{
+	height: 100%;
+	width: 60px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.div9 img{
+	height: 100%;
+	width: 60px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.div10 img{
+	height: 100%;
+	width: 60px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.div11 img{
+	height: 100%;
+	width: 60px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.div12 img{
+	height: 100%;
+	width: 60px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.div13 img{
+	height: 100%;
+	width: 60px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.div14 img{
+	height: 100%;
+	width: 60px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+/*psuedo elements*/
+.image-1::after{
+	content: "Attention \A Charle Puth";
+	font-size: 13px;
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-1::before{
+	content: "01";
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-2::after{
+	content: "Attention \A Charle Puth";
+	font-size: 13px;
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-2::before{
+	content: "02";
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-3::after{
+	content: "Attention \A Charle Puth";
+	font-size: 13px;
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-3::before{
+	content: "03";
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-4::after{
+	content: "Attention \A Charle Puth";
+	font-size: 13px;
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-4::before{
+	content: "04";
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-5::after{
+	content: "Attention \A Charle Puth";
+	font-size: 13px;
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-5::before{
+	content: "05";
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-6::after{
+	content: "Attention \A Charle Puth";
+	font-size: 13px;
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-6::before{
+	content: "06";
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-7::after{
+	content: "Attention \A Charle Puth";
+	font-size: 13px;
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-7::before{
+	content: "07";
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-8::after{
+	content: "Attention \A Charle Puth";
+	font-size: 13px;
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-8::before{
+	content: "08";
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-9::after{
+	content: "Attention \A Charle Puth";
+	font-size: 13px;
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-9::before{
+	content: "09";
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-10::after{
+	content: "Attention \A Charle Puth";
+	font-size: 13px;
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-10::before{
+	content: "10";
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-11::after{
+	content: "Attention \A Charle Puth";
+	font-size: 13px;
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-11::before{
+	content: "11";
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-12::after{
+	content: "Attention \A Charle Puth";
+	font-size: 13px;
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-12::before{
+	content: "12";
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-13::after{
+	content: "Attention \A Charle Puth";
+	font-size: 13px;
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-13::before{
+	content: "13";
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-14::after{
+	content: "Attention \A Charle Puth";
+	font-size: 13px;
+	position: relative;
+	top:-30px;
+	color: black;
+}
+.image-14::before{
+	content: "14";
+	position: relative;
+	top:-30px;
+	color: black;
+}
+/*time*/
+.time{
+	margin-top: 15px;
+	color: black;
+}
+/*icons*/
+.data{
+	margin-right: 20px;
+	margin-top: 15px;
+	color: black;
+}
+/*sidebars*/
+.sidebar{
+	position: absolute;
+	top: 115px;
+	left: 75%;
+	width: 23%;
+	height: 75vh;
+	display: flex;
+	justify-content: space-between;
+	overflow:scroll;
+}
+.sidebar .head{
+	margin-top: -5px;
+	width: 100%;
+	margin-left: 20px;
+}
+.sidebar .queue{
+	margin-top: -1px;
+}
+.songs-list img{
+	margin-top: 5px;
+	width: 80px;
+}
+.songs-list{
+	display: flex;
+	justify-content: space-between;
+}
+.songs-list:hover{
+	cursor: pointer; 
+	opacity: 0.5;
+	transition: all ease-in-out 0.2s;
+}
+/* animation for glowing heart in each of the playlist items */
+@keyframes glowing-heart {
+	0% {
+		color: yellow;
+	}
+	50% {
+		color: orangered;
+	}
+	100% {
+		color: red;
+	}
+}
+/* hover effect on heart */
+.songs-list:hover .icon-queue {
+	animation-name: glowing-heart;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-duration: 1s;
+}
+.songs-list .icon-queue{
+	margin-top: 20px;
+	margin-right: -35px;
+	font-size: 24px;
+}
+.songs-list .icon-queue p{
+	font-size: 14px;
+	margin-top: -8px;
+}
+.sidebar::-webkit-scrollbar {
+	display: none;
+}
+/*details of similar artists*/
+.img::after{
+	content: "Attention \A Charle Puth";
+	color: white;
+	position: relative;
+	top: -40px;
+}
+/*2nd sidebar*/
+.sidebar-1{
+	position: absolute;
+	top: 735px;
+	left: 75%;
+	width: 23%;
+	height: 118vh;
+	overflow: scroll;
+	display: flex;
+	justify-content: space-between;
+}
+.sidebar-1::-webkit-scrollbar {
+	display: none;
+}
+.sidebar-1 .recently-played{
+	margin-top: 10px;
+	width: 100%;
+	margin-left: 20px;
+}
+.sidebar-1 .view{
+	margin-top: 14px;
+}
+.images-sidebar_01{
+	display: flex;
+	justify-content: space-between;
+}
+.images-sidebar_01 img{
+	width: 65px;
+	margin-top: 10px;
+}
+.images-sidebar_01 .hrt{
+	margin-top: 30px;
+	margin-right: -35px;
+	font-size: 18px;
+}
+.images-sidebar_01:hover{
+	cursor: pointer;
+	opacity: 0.5;
+	transition: all ease-in-out 0.2s;
+
+}
+/* animation for glowing heart in each of the playlist items */
+@keyframes glowing-heart {
+	0% {
+		color: yellow;
+	}
+	50% {
+		color: orangered;
+	}
+	100% {
+		color: red;
+	}
+}
+/* hover effect on heart */
+.images-sidebar_01:hover .hrt {
+	animation-name: glowing-heart;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-duration: 1s;
+}
+.list-1::after{
+	content: "Baby justin Bieber";
+	position: relative;
+	top:-30px;
+}
+.list-1::before{
+	content: "01";
+	position: relative;
+	top:-30px;
+}
+.list-2::after{
+	content: "Baby justin Bieber";
+	position: relative;
+	top:-30px;
+}
+.list-2::before{
+	content: "02";
+	position: relative;
+	top:-30px;
+}
+.list-3::after{
+	content: "Baby justin Bieber";
+	position: relative;
+	top:-30px;
+}
+.list-3::before{
+	content: "03";
+	position: relative;
+	top:-30px;
+}
+.list-4::after{
+	content: "Baby justin Bieber";
+	position: relative;
+	top:-30px;
+}
+.list-4::before{
+	content: "04";
+	position: relative;
+	top:-30px;
+}
+.list-5::after{
+	content: "Baby justin Bieber";
+	position: relative;
+	top:-30px;
+}
+.list-5::before{
+	content: "05";
+	position: relative;
+	top:-30px;
+}
+.list-6::after{
+	content: "Baby justin Bieber";
+	position: relative;
+	top:-30px; 
+}
+.list-6::before{
+	content: "06";
+	position: relative;
+	top:-30px;
+}
+.list-7::after{
+	content: "Baby justin Bieber";
+	position: relative;
+	top:-30px;
+}
+.list-7::before{
+	content: "07";
+	position: relative;
+	top:-30px;
+}
+.list-8::after{
+	content: "Baby justin Bieber";
+	position: relative;
+	top:-30px;
+}
+.list-8::before{
+	content: "08";
+	position: relative;
+	top:-30px;
+}
+.list-9::after{
+	content: "Baby justin Bieber";
+	position: relative;
+	top:-30px;
+}
+.list-9::before{
+	content: "09";
+	position: relative;
+	top:-30px;
+}
+.list-10::after{
+	content: "Baby justin Bieber";
+	position: relative;
+	top:-30px;
+}
+.list-10::before{
+	content: "10";
+	position: relative;
+	top:-30px;
+}
+.list-11::after{
+	content: "Baby justin Bieber";
+	position: relative;
+	top: -30px;
+}
+.list-11::before{
+	content: "11";
+	position: relative;
+	top:-30px;
+}
+.list-12::after{
+	content: "Baby justin Bieber";
+	position: relative;
+	top:-30px;
+}
+.list-12::before{
+	content: "12";
+	position: relative;
+	top:-30px;
+}
+.list-13::after{
+	content: "Baby justin Bieber";
+	position: relative;
+	top:-30px;
+}
+.list-13::before{
+	content: "13";
+	position: relative;
+	top:-30px;
+}
+.list-14::after{
+	content: "Baby justin Bieber";
+	position: relative;
+	top:-30px;
+}
+.list-14::before{
+	content: "14";
+	position: relative;
+	top:-30px;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Footer section starts here*/
+/* this is the container for the whole footer */
+footer {
+	position: absolute;
+	top: 1667px;
+	bottom: 1px;
+	width: 100%;
+	height: 60px;
+	background-image: linear-gradient(to right,#20002c,#cbb4d4);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+	flex-wrap: nowrap;
+	padding: 0px 3%;
+	box-sizing: border-box;
+	z-index: 6;
+}
+/* footer is divided into 3 parts */
+/* 1. first part of the footer */
+.active-song-description {
+	/* border:1px solid white; */
+	height: 90%;
+	width: 25%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+/* the current song which is being played, this is the image container for that. */
+#song-image {
+	width: 50px;
+	height: 50px;
+	min-width: 50px;
+	min-height: 50px;
+}
+/* current song image */
+#song-image img {
+	width: 100%;
+	height: 100%;
+}
+/* heart and ban icon */
+.heart-and-ban-icon {
+	height: 100%;
+	padding-top: 4%;
+}
+/* song decscription */
+.song-desc {
+	margin-right: 1%;
+	margin-left: 1%;
+}
+/* song name */
+.song-desc div:nth-child(1) {
+	font-size: 14px;
+}
+/* song author */
+.song-desc div:nth-child(2) {
+	font-size: 12px;
+}
+
+/* 2. Second part of the footer*/
+.player {
+	width: 45%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: nowrap;
+}
+/* controls is the container for all the center controls of the player */
+.controls {
+	width: 40%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 20px;
+}
+/* this is the song-duration slider */
+#slider {
+	width: 100%;
+	font-size: 12px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	margin-top: 5px;
+}
+/* ////////// */
+.time {
+	margin: 0px 10px;
+}
+/* adjusting the slider for better visuals */
+.slidecontainer {
+	width: 100%;
+}
+/* for audio and main center player */
+.slider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 5px;
+	background: #d3d3d3;
+	outline: none;
+	opacity: 0.5;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
+}
+/* hover effect for the slider */
+.slider:hover {
+	opacity: 1;
+}
+/* these are for adjusting the dimensions and default styling of the long-slider */
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 17px;
+	height: 17px;
+	border-radius: 50%;
+	background: #007bff;
+	cursor: pointer;
+}
+/* this is the circular thumb, which can be moved across the div */
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	background: #4caf50;
+	cursor: pointer;
+}
+/* third part of the footer */
+/* this contains the extra icons and slider for volume */
+/* this is also a container */
+.extras {
+	width: 20%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+/*© section of the music player*/
+.footer-section{
+	position: relative;
+	top:150px;
+	width: 100%;
+	height: 8vh;
+	background-image: linear-gradient(to right,#000428,#000428);
+}
+.footer-section .data{
+	text-align: center;
+	margin-top: 50px;
+	font-size: 18px;
+	font-weight: 400;
+	color: white;
+}
+.footer-section .social-icon{
+	text-align: center;
+	margin-top: 15px;
+	font-size: 15px;
+}
+/*some media queries for responsive designs*/
+@media(max-width:1084px) and (min-width: 413px){
+	.main-song{
+		width: 90%;
+		border-radius:20px;
+	}
+	.main-data-head p{
+		font-size: 12px;
+	}
+	.song-details{
+		width: 90%
+	}
+	button{
+		width: 120px;
+	}
+	.sidebar{
+		width: 0;
+	}
+	.sidebar-1{
+		width: 0;
+	}
+}
